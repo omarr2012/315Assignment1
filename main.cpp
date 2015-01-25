@@ -1,23 +1,15 @@
 #include <iostream>
 #include <stdexcept>
+#include <sstream>
 #include <fstream>
+#include "FindPath.h"
 
 using namespace std;
 
 int main(){
-	try{
-		string buff;
-		
-		cout<<"Your file contains:\n";
-		
-		while(getline(cin, buff)){
-			if (buff[0] != '#'){
-				cout<<buff<<'\n';
-			}
-		}
-
-	}
-	catch(exception &error){
-		cerr << "Error: " << error.what() << endl;
-	}
+	
+	FindPath fp("testcase1.txt");
+	cout<<"\n--------------------------------\n";
+	fp.shortest_path();
+	fp.display_path();
 }
