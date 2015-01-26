@@ -2,14 +2,20 @@
 #include <stdexcept>
 #include <sstream>
 #include <fstream>
-#include "FindPath.h"
+#include "Closed_Path_Calculator.h"
 
 using namespace std;
 
 int main(){
-	
-	FindPath fp("testcase1.txt");
-	cout<<"\n--------------------------------\n";
-	fp.shortest_path();
-	fp.display_path();
+	try{
+		Closed_Path_Calculator path_calc;
+		path_calc.load_points();
+		cout<<"\n--------------------------------\n";
+		path_calc.find_path();
+		path_calc.display_path();
+		path_calc.display_length();
+	}
+	catch(exception &error){
+		cerr<<"Error: "<<error.what()<<endl;
+	}
 }
