@@ -27,4 +27,5 @@ private:
 	list<int> path;//keeps the names of the points on the path
 	double tot_dist;
 	void calculate_path();//does main calculation!!!
+	list<Points>::iterator set_origin();
 };
