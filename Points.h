@@ -8,9 +8,11 @@ class Points
 {
 public:
 	Points();
+	Points(int pt_name);
 	~Points();
 	int name;
-	double dist_to_pt(Points pt1);
+	double partial_dist_to_pt(Points pt);//partial distance to pt
+	double full_dist_to_pt(Points pt);
 	int x, y;
 	
 private:
